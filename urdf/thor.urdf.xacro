@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+<robot name="thor">
+  <link name="thor_base_link">
+    <visual>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://thor_description/meshes/BaseBot.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="thor_art1_link">
+    <visual>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://thor_description/meshes/Art1Body.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="thor_art2_link">
+    <visual>
+      <geometry>
+        <box size="0.3 0.15 0.5"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="thor_art3_link" >
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.15"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="thor_art4_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.15"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+
+  <link name="thor_art5_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.15"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="thor_art6_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.15"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="thor_art1_joint" type="revolute">
+    <parent link="thor_base_link"/>
+    <child link="thor_art1_link"/>
+    <origin xyz="0 0 .104" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0.0" upper="6.283" velocity="0.5"/>
+  </joint>
+
+  <joint name="thor_art2_joint" type="revolute">
+    <parent link="thor_art1_link"/>
+    <child link="thor_art2_link"/>
+    <origin xyz="0 0 .195" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="0.0" upper="3.142" velocity="0.5"/>
+  </joint>
+
+  <joint name="thor_art3_joint" type="revolute">
+    <parent link="thor_art2_link"/>
+    <child link="thor_art3_link"/>
+    <origin xyz="0 0 .3392" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="0.0" upper="6.283" velocity="0.5"/>
+  </joint>
+
+  <joint name="thor_art4_joint" type="revolute">
+    <parent link="thor_art3_link"/>
+    <child link="thor_art4_link"/>
+    <origin xyz="0 0 .4263" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0.0" upper="6.283" velocity="0.5"/>
+  </joint>
+
+  <joint name="thor_art5_joint" type="revolute">
+    <parent link="thor_art4_link"/>
+    <child link="thor_art5_link"/>
+    <origin xyz="0 0 0.52955" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000.0" lower="0.0" upper="3.142" velocity="0.5"/>
+  </joint>
+
+  <joint name="thor_art6_joint" type="revolute">
+    <parent link="thor_art5_link"/>
+    <child link="thor_art6_link"/>
+    <origin xyz="0 0 0.52955" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0.0" upper="6.283" velocity="0.5"/>
+  </joint>
+
+</robot>
